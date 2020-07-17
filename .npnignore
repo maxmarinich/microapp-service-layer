@@ -49,6 +49,7 @@ jspm_packages
 .prettierrc
 .travis.yml
 .DS_Store
+yarn.lock
 package-lock.json
 tsconfig.json
 

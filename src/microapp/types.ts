@@ -4,7 +4,7 @@ export type Context = {
 
 export type ContextInstance = {
   createApp: (options: Options) => Promise<void>;
-  createOptions: CreateOptions,
+  createOptions: CreateOptions;
 } | null;
 
 export type Options = {
@@ -13,7 +13,7 @@ export type Options = {
 };
 
 export type Result = {
-  ok: boolean,
-}
+  ok: boolean;
+};
 
 export type CreateOptions = Record<string, unknown>;

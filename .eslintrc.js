@@ -4,7 +4,12 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
   rules: {
+    '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/explicit-function-return-type': ['off'],
     'no-useless-catch': 'off',
+  },
+  env: {
+    browser: true,
+    node: true,
   },
 };
