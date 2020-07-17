@@ -1,0 +1,24 @@
+{
+  "include": ["./src"],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "strict": true,
+    "declaration": true,
+    "importHelpers": false,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": false,
+    "baseUrl": ".",
+    "outDir": "lib",
+    "types": ["webpack-env"],
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": false
+  },
+  "files": [
+    "src/types/env.d.ts"
+  ],
+  "exclude": ["node_modules", "lib"]
+}
