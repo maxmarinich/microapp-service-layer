@@ -29,9 +29,10 @@ type Result = {
 };
 
 type Template = {
-  html: string;
-  state: string;
-  styles: string;
+  html?: string;
+  state?: string;
+  styles?: string;
+  template?: string;
 };
 ```
 .envs

@@ -1,9 +1,10 @@
 import instance from '../instance';
 
 export type Template = {
-  html: string;
-  state: string;
-  styles: string;
+  html?: string;
+  state?: string;
+  styles?: string;
+  template?: string;
 };
 
 export const loadTemplate = (params = { path: '' }): Promise<Template> => {
