@@ -42,7 +42,7 @@ jspm_packages
 # Setup
 .babelrc
 .eslint
-.eslintrc.js
+.eslintrc
 .gitignore
 .vscode
 .npmrc
