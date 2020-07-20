@@ -1,19 +1,16 @@
 export type Context = {
-  [key: string]: ContextInstance;
+  [key: string]: MicroappInstance;
 };
 
-export type ContextInstance = {
+export type MicroappInstance = {
   createApp: (options: Options) => Promise<void>;
-  createOptions: CreateOptions;
+  getInitialOptions?: () => Record<string, unknown>;
 } | null;
 
 export type Options = {
-  mount?: boolean;
-  elementOrSelector?: Element | string;
+  elementOrSelector: Element | string;
 };
 
 export type Result = {
   ok: boolean;
 };
-
-export type CreateOptions = Record<string, unknown>;

@@ -1,7 +1,7 @@
 import { loadBundle } from '../api/methods/loadBundle';
 import { loadTemplate } from '../api/methods/loadTemplate';
-import { microappNamespace, microappCreateOptions } from '../constants';
-import { Context, ContextInstance, CreateOptions, Options, Result } from './types';
+import { microappNamespace } from '../constants';
+import { Context, MicroappInstance, Options, Result } from './types';
 
 const success = { ok: true };
 const failed = { ok: false };
@@ -10,17 +10,12 @@ const context: Context = {
   [microappNamespace]: null,
 };
 
-const getInstance = (): ContextInstance => context[microappNamespace];
-
-const getInstanceOptions = (): CreateOptions => {
-  const instance = getInstance();
-  return instance ? instance[microappCreateOptions] : {};
+const getInstance = (): MicroappInstance => {
+  return context[microappNamespace];
 };
 
-const isRegistered = (): boolean => Boolean(getInstance());
-
-const unregister = (): void => {
-  context[microappNamespace] = null;
+const isRegistered = (): boolean => {
+  return Boolean(getInstance());
 };
 
 const register = async (): Promise<Result> => {
@@ -38,8 +33,7 @@ const mount = async (options: Options): Promise<Result> => {
 
   if (instance) {
     try {
-      const { mount = true } = options;
-      await instance.createApp({ ...options, mount });
+      await instance.createApp(options);
       return success;
     } catch (error) {
       throw error;
@@ -48,13 +42,18 @@ const mount = async (options: Options): Promise<Result> => {
   return failed;
 };
 
+const unregister = (): void => {
+  context[microappNamespace] = null;
+};
+
 export default function getMicroappInstance() {
   return {
-    isRegistered,
+    getInstance,
+    loadBundle,
     loadTemplate,
-    mount,
+    isRegistered,
     register,
     unregister,
-    getInstanceOptions,
+    mount,
   };
 }
