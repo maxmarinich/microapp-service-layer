@@ -8,6 +8,7 @@ export type MicroappInstance = {
 } | null;
 
 export type Options = {
+  mount?: boolean;
   elementOrSelector: Element | string;
 };
 

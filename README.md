@@ -20,6 +20,7 @@ type MicroappInstance = {
 };
 
 type Options = {
+  mount?: boolean;
   elementOrSelector: Element | string;
 };
 
