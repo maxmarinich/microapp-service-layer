@@ -1,8 +1,4 @@
-# microapp-service-layer
-
-### Api
-```typescript
-interface MicroappServiceLayer {
+export interface MicroappServiceLayer {
   microappInstance: MicroappInstance | null;
 
   isMicroappInstanceRegistered: boolean;
@@ -16,12 +12,12 @@ interface MicroappServiceLayer {
   createApp(options: CreateAppOptions): Promise<Result>;
 }
 
-type MicroappInstance = {
+export type MicroappInstance = {
   createApp: (options: CreateAppOptions) => Promise<void>;
   getInitialOptions?: () => Record<string, unknown>;
 };
 
-type CreateAppOptions = {
+export type CreateAppOptions = {
   appId?: string;
   mount?: boolean;
   elementOrSelector: Element | string;
@@ -29,24 +25,17 @@ type CreateAppOptions = {
   beforeCreate?: (...args: unknown[]) => void;
 };
 
-type CreateTemplateOptions = {
+export type CreateTemplateOptions = {
   path?: string;
 };
 
-type Template = {
+export type Template = {
   html?: string;
   state?: string;
   styles?: string;
   template?: string;
 };
 
-type Result = {
+export type Result = {
   ok: boolean;
 };
-```
-
-.envs
-```
-MSL_API_URL || http://localhost:5000
-```
-

@@ -1,14 +1,14 @@
 import fetch from 'cross-fetch';
 
-import { microappApiUrl } from '../constants';
-import { InstanceOptions } from './types';
+import { apiUrl } from '../../constants';
+import { ClientOptions } from '../types';
 
 const headersBase = { 'Content-Type': 'application/json' };
 
-function apiInstance(instanceOptions: InstanceOptions) {
-  const { url, params, headers, responseType, method = 'GET', ...restOptions } = instanceOptions;
+export default function client(clientOptions: ClientOptions) {
+  const { url, params, headers, responseType, method = 'GET', ...restOptions } = clientOptions;
 
-  const endpoint = `${microappApiUrl}${url}`;
+  const endpoint = `${apiUrl}${url}`;
 
   const options: RequestInit = {
     ...restOptions,
@@ -30,5 +30,3 @@ function apiInstance(instanceOptions: InstanceOptions) {
     throw new Error(`${response.status}`);
   });
 }
-
-export default apiInstance;

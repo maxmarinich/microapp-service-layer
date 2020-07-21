@@ -1,14 +1,8 @@
-import instance from '../instance';
+import client from '../client';
+import { Template, CreateTemplateOptions } from '../../types';
 
-export type Template = {
-  html?: string;
-  state?: string;
-  styles?: string;
-  template?: string;
-};
-
-export const loadTemplate = (params = { path: '' }): Promise<Template> => {
-  return instance({
+export const loadTemplate = (params: CreateTemplateOptions): Promise<Template> => {
+  return client({
     url: '/template',
     method: 'POST',
     params,

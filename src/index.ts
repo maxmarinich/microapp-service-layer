@@ -1,7 +1,4 @@
-import getMicroappInstance from './microapp/instance';
-import * as constants from './constants';
+import MicroappServiceLayer from './service';
 
-const instance = getMicroappInstance();
-
-export { constants };
-export default instance;
+export * from './constants';
+export default MicroappServiceLayer;

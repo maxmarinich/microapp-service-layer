@@ -1,8 +1,8 @@
-import instance  from '../instance';
+import client  from '../client';
 import { ResponseType } from '../types';
 
 export const loadBundle = (): Promise<string> => {
-  return instance({
+  return client({
     url: '/bundle',
     responseType: ResponseType.text,
   });

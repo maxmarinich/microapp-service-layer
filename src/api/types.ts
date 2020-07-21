@@ -1,4 +1,4 @@
-export type InstanceOptions = {
+export type ClientOptions = {
   url: string;
   // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
   // @ts-ignore
