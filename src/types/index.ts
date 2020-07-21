@@ -26,7 +26,7 @@ export type CreateAppOptions = {
 };
 
 export type CreateTemplateOptions = {
-  path?: string;
+  [key: string]: any;
 };
 
 export type Template = {
