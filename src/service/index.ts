@@ -1,7 +1,13 @@
 import { loadBundle } from '../api/methods/loadBundle';
 import { loadTemplate } from '../api/methods/loadTemplate';
 import { microappNamespace } from '../constants';
-import { MicroappServiceLayer, MicroappInstance, CreateAppOptions, Result } from '../types';
+import {
+  MicroappServiceLayer,
+  MicroappInstance,
+  CreateAppOptions,
+  CreateTemplateOptions,
+  Result,
+} from '../types';
 
 const success = { ok: true };
 const failed = { ok: false };
@@ -31,8 +37,8 @@ class MSL implements MicroappServiceLayer {
     return this.isMicroappInstanceRegistered ? success : failed;
   }
 
-  async createTemplate({ path = '' }) {
-    return await loadTemplate({ path });
+  async createTemplate(options: CreateTemplateOptions = {}) {
+    return await loadTemplate(options);
   }
 
   async createApp(options: CreateAppOptions): Promise<Result> {
