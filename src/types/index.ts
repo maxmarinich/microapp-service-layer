@@ -7,9 +7,9 @@ export interface MicroappServiceLayer {
 
   unregisterMicroappInstance(): void;
 
-  createTemplate(options: CreateTemplateOptions): Promise<Template>;
-
   createApp(options: CreateAppOptions): Promise<Result>;
+
+  createTemplate(options: CreateTemplateOptions): Promise<Template>;
 }
 
 export type MicroappInstance = {
@@ -18,21 +18,22 @@ export type MicroappInstance = {
 };
 
 export type CreateAppOptions = {
+  elementOrSelector: Element | string;
   appId?: string;
   mount?: boolean;
-  elementOrSelector: Element | string;
   state?: Record<string, any>;
   beforeCreate?: (...args: unknown[]) => void;
 };
 
 export type CreateTemplateOptions = {
+  path: string;
   [key: string]: any;
 };
 
 export type Template = {
-  html?: string;
-  state?: string;
-  styles?: string;
+  html: string;
+  state: string;
+  styles: string;
   template?: string;
 };
 

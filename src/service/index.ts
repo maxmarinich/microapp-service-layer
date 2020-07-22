@@ -6,6 +6,7 @@ import {
   MicroappInstance,
   CreateAppOptions,
   CreateTemplateOptions,
+  Template,
   Result,
 } from '../types';
 
@@ -37,7 +38,7 @@ class MSL implements MicroappServiceLayer {
     return this.isMicroappInstanceRegistered ? success : failed;
   }
 
-  async createTemplate(options: CreateTemplateOptions = {}) {
+  async createTemplate(options: CreateTemplateOptions): Promise<Template> {
     return await loadTemplate(options);
   }
 

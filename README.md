@@ -30,13 +30,14 @@ type CreateAppOptions = {
 };
 
 type CreateTemplateOptions = {
-  path?: string;
+  path: string;
+  [key: string]: any;
 };
 
 type Template = {
-  html?: string;
-  state?: string;
-  styles?: string;
+  html: string;
+  state: string;
+  styles: string;
   template?: string;
 };
 
