@@ -8,6 +8,7 @@ import {
   CreateTemplateOptions,
   Template,
   Result,
+  App,
 } from '../types';
 
 const success = { ok: true };
@@ -42,13 +43,12 @@ class MSL implements MicroappServiceLayer {
     return await loadTemplate(options);
   }
 
-  async createApp(options: CreateAppOptions): Promise<Result> {
+  async createApp(options: CreateAppOptions): Promise<App | Result> {
     const instance = this.microappInstance;
 
     if (instance) {
       try {
-        await instance.createApp(options); // { app, router, store }
-        return success;
+        return instance.createApp(options);
       } catch (error) {
         throw error;
       }

@@ -13,11 +13,11 @@ interface MicroappServiceLayer {
 
   createTemplate(options: CreateTemplateOptions): Promise<Template>;
 
-  createApp(options: CreateAppOptions): Promise<Result>;
+  createApp(options: CreateAppOptions): Promise<App | Result>;
 }
 
 type MicroappInstance = {
-  createApp: (options: CreateAppOptions) => Promise<void>;
+  createApp: (options: CreateAppOptions) => Promise<App>;
   getInitialOptions?: () => Record<string, unknown>;
 };
 
@@ -43,6 +43,12 @@ type Template = {
 
 type Result = {
   ok: boolean;
+};
+
+export type App = {
+  app: unknown;
+  router: unknown;
+  store: unknown;
 };
 ```
 
