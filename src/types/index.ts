@@ -7,13 +7,13 @@ export interface MicroappServiceLayer {
 
   unregisterMicroappInstance(): void;
 
-  createApp(options: CreateAppOptions): Promise<App | Result>;
+  createApp(options: CreateAppOptions): Promise<App | null>;
 
   createTemplate(options: CreateTemplateOptions): Promise<Template>;
 }
 
 export type MicroappInstance = {
-  createApp: (options: CreateAppOptions) => Promise<App>;
+  createApp: (options: CreateAppOptions) => Promise<App | null>;
   getInitialOptions?: () => Record<string, unknown>;
 };
 

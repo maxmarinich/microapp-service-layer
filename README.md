@@ -13,11 +13,11 @@ interface MicroappServiceLayer {
 
   createTemplate(options: CreateTemplateOptions): Promise<Template>;
 
-  createApp(options: CreateAppOptions): Promise<App | Result>;
+  createApp(options: CreateAppOptions): Promise<App | null>;
 }
 
 type MicroappInstance = {
-  createApp: (options: CreateAppOptions) => Promise<App>;
+  createApp: (options: CreateAppOptions) => Promise<App | null>;
   getInitialOptions?: () => Record<string, unknown>;
 };
 

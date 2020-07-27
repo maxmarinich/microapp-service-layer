@@ -43,7 +43,7 @@ class MSL implements MicroappServiceLayer {
     return await loadTemplate(options);
   }
 
-  async createApp(options: CreateAppOptions): Promise<App | Result> {
+  async createApp(options: CreateAppOptions): Promise<App | null> {
     const instance = this.microappInstance;
 
     if (instance) {
@@ -53,7 +53,7 @@ class MSL implements MicroappServiceLayer {
         throw error;
       }
     }
-    return failed;
+    return null;
   }
 }
 
