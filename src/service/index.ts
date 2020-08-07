@@ -1,3 +1,4 @@
+import EventBus from '../eventbus';
 import { loadBundle } from '../api/methods/loadBundle';
 import { loadTemplate } from '../api/methods/loadTemplate';
 import { microappNamespace } from '../constants';
@@ -39,8 +40,8 @@ class MSL implements MicroappServiceLayer {
     return this.isMicroappInstanceRegistered ? success : failed;
   }
 
-  async createTemplate(options: CreateTemplateOptions): Promise<Template> {
-    return await loadTemplate(options);
+  createTemplate(options: CreateTemplateOptions): Promise<Template> {
+    return loadTemplate({ eventbus: EventBus, ...options });
   }
 
   async createApp(options: CreateAppOptions): Promise<App | null> {
@@ -48,7 +49,7 @@ class MSL implements MicroappServiceLayer {
 
     if (instance) {
       try {
-        return instance.createApp(options);
+        return instance.createApp({ eventbus: EventBus, ...options });
       } catch (error) {
         throw error;
       }

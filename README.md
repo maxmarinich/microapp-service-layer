@@ -1,5 +1,14 @@
 # microapp-service-layer
 
+### Example
+```typescript
+import MSL, { microappId } from 'microapp-service-layer';
+import MicroappEventBus, { Events } from 'microapp-service-layer/eventbus';
+
+MSL.createApp({ elementOrSelector: `#${microappId}` });
+MicroappEventBus.emit(Events.DID_UPDATE, { created: true });
+```
+
 ### Api
 ```typescript
 interface MicroappServiceLayer {
@@ -23,8 +32,9 @@ type MicroappInstance = {
 
 type CreateAppOptions = {
   appId?: string;
-  mount?: boolean;
   elementOrSelector: Element | string;
+  eventbus?: unknown;
+  mount?: boolean;
   state?: Record<string, any>;
   beforeCreate?: (...args: unknown[]) => void;
 };

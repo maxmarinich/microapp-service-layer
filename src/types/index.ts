@@ -18,8 +18,9 @@ export type MicroappInstance = {
 };
 
 export type CreateAppOptions = {
-  elementOrSelector: Element | string;
   appId?: string;
+  elementOrSelector: Element | string;
+  eventbus?: unknown;
   mount?: boolean;
   state?: Record<string, any>;
   beforeCreate?: (...args: unknown[]) => void;
