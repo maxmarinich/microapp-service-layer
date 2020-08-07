@@ -49,7 +49,7 @@ class MSL implements MicroappServiceLayer {
 
     if (instance) {
       try {
-        return instance.createApp({ eventbus: EventBus, ...options });
+        return await instance.createApp({ eventbus: EventBus, ...options });
       } catch (error) {
         throw error;
       }
