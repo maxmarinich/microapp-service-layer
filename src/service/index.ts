@@ -40,8 +40,8 @@ class MSL implements MicroappServiceLayer {
     return this.isMicroappInstanceRegistered ? success : failed;
   }
 
-  createTemplate(options: CreateTemplateOptions): Promise<Template> {
-    return loadTemplate({ eventbus: EventBus, ...options });
+  async createTemplate(options: CreateTemplateOptions): Promise<Template> {
+    return await loadTemplate({ eventbus: EventBus, ...options });
   }
 
   async createApp(options: CreateAppOptions): Promise<App | null> {
