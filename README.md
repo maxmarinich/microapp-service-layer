@@ -3,7 +3,7 @@
 ### Example
 ```typescript
 import MSL, { microappId } from 'microapp-service-layer';
-import MicroappEventBus, { Events } from 'microapp-service-layer/eventbus';
+import MicroappEventBus, { Events } from 'microapp-service-layer/lib/eventbus';
 
 MSL.createApp({ elementOrSelector: `#${microappId}` });
 MicroappEventBus.emit(Events.DID_UPDATE, { created: true });
