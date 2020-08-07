@@ -1,6 +1,6 @@
-import { Events, Handler } from './types';
+import { EventBus, Events, Handler } from './types';
 
-class EventBus {
+class Eventbus implements EventBus {
   protected eventsQueue: Handler[] = [];
 
   constructor(eventsQueue: Handler[] = []) {
@@ -24,14 +24,14 @@ class EventBus {
     }
   }
 
-  emit(event: Events, ...args: unknown[]) {
+  emit(event: Events, params?: unknown) {
     this.eventsQueue.forEach((handler) => {
       if (handler.event === event) {
-        handler.handler(...args);
+        handler.handler(params);
       }
     });
   }
 }
 
-export { Events };
-export default new EventBus();
+export { Events, EventBus };
+export default new Eventbus();
