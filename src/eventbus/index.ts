@@ -1,4 +1,4 @@
-import {Events, Handler} from './types';
+import { Events, Handler } from './types';
 
 class EventBus {
   protected eventsQueue: Handler[] = [];
@@ -35,5 +35,3 @@ class EventBus {
 
 export { Events };
 export default new EventBus();
-
-
