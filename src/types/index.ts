@@ -33,8 +33,8 @@ export type CreateTemplateOptions = {
 
 export type Template = {
   html: string;
-  state: string;
-  styles: string;
+  state: any;
+  styles: any;
   template?: string;
 };
 
