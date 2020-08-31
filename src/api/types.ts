@@ -12,3 +12,7 @@ export enum ResponseType {
   arrayBuffer = 'arrayBuffer',
 }
 
+export type ConfigureOptions = {
+  apiUrl: string;
+}
+

@@ -1,6 +1,6 @@
 import fetch from 'cross-fetch';
 
-import { apiUrl } from '../../constants';
+import defaultOptions from '../configure';
 import { ClientOptions } from '../types';
 
 const headersBase = { 'Content-Type': 'application/json' };
@@ -8,7 +8,7 @@ const headersBase = { 'Content-Type': 'application/json' };
 export default function client(clientOptions: ClientOptions) {
   const { url, params, headers, responseType, method = 'GET', ...restOptions } = clientOptions;
 
-  const endpoint = `${apiUrl}${url}`;
+  const endpoint = `${defaultOptions.apiUrl}${url}`;
 
   const options: RequestInit = {
     ...restOptions,
