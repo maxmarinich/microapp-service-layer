@@ -1,8 +1,6 @@
 import MicroappServiceLayer from './service';
 import { configureApi } from './api/configure';
-import EventbusInstance, { Events, UpdateTypes } from './eventbus';
-
-const Eventbus = new EventbusInstance();
+import { Eventbus, Events, UpdateTypes } from './eventbus';
 
 export * from './constants';
 export default MicroappServiceLayer;

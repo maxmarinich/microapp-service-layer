@@ -1,6 +1,6 @@
 import { EventBus, Events, UpdateTypes, Handler } from './types';
 
-export default class Eventbus implements EventBus {
+export default class Instance implements EventBus {
   protected eventsQueue: Handler[] = [];
 
   constructor(eventsQueue: Handler[] = []) {
@@ -32,5 +32,6 @@ export default class Eventbus implements EventBus {
     });
   }
 }
+const Eventbus = new Instance();
 
-export { Events, UpdateTypes };
+export { Eventbus, Events, UpdateTypes };
