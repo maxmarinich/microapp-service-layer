@@ -34,4 +34,4 @@ export default class Instance implements EventBus {
 }
 const Eventbus = new Instance();
 
-export { Eventbus, Events, UpdateTypes };
+export { Eventbus, Events, UpdateTypes, EventBus };
