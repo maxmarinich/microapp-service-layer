@@ -1,13 +1,13 @@
 import { EventBus, Events, UpdateTypes, Handler } from './types';
 
-class Eventbus implements EventBus {
+export default class Eventbus implements EventBus {
   protected eventsQueue: Handler[] = [];
 
   constructor(eventsQueue: Handler[] = []) {
     this.eventsQueue = eventsQueue;
   }
 
-  on(event: Events, handler: Function, context: unknown) {
+  on(event: Events, handler: Function, context?: unknown) {
     if (typeof context === 'undefined') {
       context = handler;
     }
@@ -33,5 +33,4 @@ class Eventbus implements EventBus {
   }
 }
 
-export { EventBus, Events, UpdateTypes };
-export default new Eventbus();
+export { Events, UpdateTypes };
