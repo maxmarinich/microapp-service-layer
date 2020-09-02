@@ -1,7 +1,7 @@
 import { ConfigureOptions } from './types';
 
 const defaultOptions = {
-  apiUrl: process.env.MSL_API_URL || 'http://192.168.16.179',
+  apiUrl: process.env.MSL_API_URL || 'http://localhost:5000',
 };
 
 export const configureApi = (options: Partial<ConfigureOptions> = {}) => {

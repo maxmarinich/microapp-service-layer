@@ -64,6 +64,6 @@ export type App = {
 
 .envs
 ```
-MSL_API_URL || http://192.168.16.179
+MSL_API_URL || http://localhost:5000
 ```
 
