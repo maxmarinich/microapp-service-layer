@@ -2,7 +2,7 @@
   "name": "microapp-service-layer",
   "main": "lib",
   "types": "lib",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "scripts": {
     "build": "rm -rf lib && tsc",
     "build:types": "tsc --emitDeclarationOnly",
