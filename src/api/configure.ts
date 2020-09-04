@@ -1,7 +1,7 @@
 import { ConfigureOptions } from './types';
 
 const defaultOptions = {
-  apiUrl: process.env.MSL_API_URL || 'http://localhost:5000',
+  apiUrl: process.env.MSL_API_URL || 'https://marketing-web.common.dev.leoncorp.net',
 };
 
 export const configureApi = (options: Partial<ConfigureOptions> = {}) => {

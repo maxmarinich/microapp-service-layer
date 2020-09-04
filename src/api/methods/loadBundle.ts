@@ -3,7 +3,7 @@ import { ResponseType } from '../types';
 
 export const loadBundle = (): Promise<string> => {
   return client({
-    url: '/bundle',
+    url: '/microapp.js',
     responseType: ResponseType.text,
   });
 };
