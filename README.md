@@ -64,6 +64,6 @@ export type App = {
 
 .envs
 ```
-MSL_API_URL || http://localhost:5000
+MSL_API_URL || VUE_APP_MSL_API_URL || http://localhost:5000
 ```
 
